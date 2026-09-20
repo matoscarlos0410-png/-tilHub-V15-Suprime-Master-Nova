@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="ÚtilHub V15 — herramientas útiles para tu día a día">
+
+  <title>ÚtilHub V15 — NOVA</title>
+
+  <!-- =====================================================
+       ICONO ÚTILHUB
+       100% CÓDIGO — NO NECESITA IMAGEN NI icon.svg
+       ===================================================== -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.55' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E"
+  >
+
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       FONDO NOVA
+       ===================================================== -->
+
+  <div class="nova-bg" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <!-- =====================================================
+       BARRA SUPERIOR
+       ===================================================== -->
+
+  <header class="topbar">
+
+    <a class="brand" href="#inicio" aria-label="ÚtilHub inicio">
+
+      <!-- LOGO UH EN CÓDIGO -->
+      <span class="brand-mark">
+
+        <svg viewBox="0 0 64 64">
+
+          <defs>
+
+            <linearGradient
+              id="brandGradient"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+
+              <stop
+                offset="0%"
+                stop-color="#22d3ee"
+              />
+
+              <stop
+                offset="55%"
+                stop-color="#3b82f6"
+              />
+
+              <stop
+                offset="100%"
+                stop-color="#7c3aed"
+              />
+
+            </linearGradient>
+
+          </defs>
+
+          <rect
+            x="3"
+            y="3"
+            width="58"
+            height="58"
+            rx="15"
+            fill="#07111f"
+            stroke="url(#brandGradient)"
+            stroke-width="2.5"
+          />
+
+          <!-- U -->
+
+          <path
+            d="M14 17v17c0 9 5 14 12 14s12-5 12-14V17"
+            fill="none"
+            stroke="url(#brandGradient)"
+            stroke-width="5.5"
+            stroke-linecap="round"
+          />
+
+          <!-- H -->
+
+          <path
+            d="M41 17v30M41 32h11M52 17v30"
+            fill="none"
+            stroke="url(#brandGradient)"
+            stroke-width="5.5"
+            stroke-linecap="round"
+          />
+
+          <!-- NOVA -->
+
+          <path
+            d="M8 39c15-10 30-13 49-7"
+            fill="none"
+            stroke="#22d3ee"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </span>
+
+      <span>
+
+        <strong>ÚtilHub</strong>
+
+        <small>V15 · NOVA</small>
+
+      </span>
+
+    </a>
+
+
+    <!-- NAVEGACIÓN -->
+
+    <nav>
+
+      <a href="#herramientas">
+        Herramientas
+      </a>
+
+      <a href="#organiza">
+        Organiza
+      </a>
+
+      <a href="#explora">
+        Explora
+      </a>
+
+      <a href="#ajustes">
+        Ajustes
+      </a>
+
+    </nav>
+
+
+    <!-- CONTROLES -->
+
+    <div class="top-actions">
+
+      <button
+        id="themeBtn"
+        class="icon-btn"
+        title="Cambiar tema"
+        aria-label="Cambiar tema"
+      >
+        ☾
+      </button>
+
+      <button
+        id="animBtn"
+        class="icon-btn"
+        title="Animaciones"
+        aria-label="Animaciones"
+      >
+        ✦
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+       ===================================================== -->
+
+  <main id="inicio">
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <span class="eyebrow">
+          NOVA 5.0 · RÁPIDO · PRIVADO · ÚTIL
+        </span>
+
+        <h1>
+          Todo lo útil.
+          <br>
+          <span>En un solo lugar.</span>
+        </h1>
+
+        <p>
+          Calcula, convierte, organiza, busca y guarda
+          herramientas que puedes usar directamente
+          desde tu navegador.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            class="btn primary"
+            href="#herramientas"
+          >
+            Explorar herramientas
+          </a>
+
+          <button
+            class="btn ghost"
+            id="randomToolBtn"
+          >
+            Sorpréndeme
+          </button>
+
+        </div>
+
+
+        <div class="hero-pills">
+
+          <span>
+            ⚡ Sin cuenta
+          </span>
+
+          <span>
+            🔒 Datos locales
+          </span>
+
+          <span>
+            📱 Adaptado a móvil
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           NÚCLEO NOVA
+           ================================================= -->
+
+      <div
+        class="nova-core"
+        aria-label="Núcleo NOVA"
+      >
+
+        <div class="orbit orbit-a"></div>
+
+        <div class="orbit orbit-b"></div>
+
+
+        <div class="core-logo">
+
+          <span>
+            UH
+          </span>
+
+          <small>
+            NOVA
+          </small>
+
+        </div>
+
+
+        <i class="spark s1">
+          ✦
+        </i>
+
+        <i class="spark s2">
+          ✦
+        </i>
+
+        <i class="spark s3">
+          ·
+        </i>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         BUSCADOR
+         =================================================== -->
+
+    <section class="search-zone">
+
+      <div class="search-box">
+
+        <span>
+          ⌕
+        </span>
+
+        <input
+          id="globalSearch"
+          autocomplete="off"
+          placeholder="Busca una herramienta..."
+        >
+
+        <kbd>
+          Ctrl K
+        </kbd>
+
+      </div>
+
+
+      <div
+        id="categoryBar"
+        class="categories"
+      ></div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ESTADÍSTICAS
+         =================================================== -->
+
+    <section class="stats">
+
+      <div>
+
+        <strong id="toolCount">
+          0
+        </strong>
+
+        <span>
+          herramientas
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <strong id="favCount">
+          0
+        </strong>
+
+        <span>
+          favoritas
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <strong id="noteCount">
+          0
+        </strong>
+
+        <span>
+          notas
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <strong id="taskCount">
+          0
+        </strong>
+
+        <span>
+          tareas
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         HERRAMIENTAS
+         =================================================== -->
+
+    <section
+      id="herramientas"
+      class="section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="eyebrow">
+            CENTRO DE HERRAMIENTAS
+          </span>
+
+          <h2>
+            Lo que necesitas, rápido.
+          </h2>
+
+        </div>
+
+
+        <button
+          class="text-btn"
+          id="showAllBtn"
+        >
+          Ver todas
+        </button>
+
+      </div>
+
+
+      <div
+        id="toolGrid"
+        class="tool-grid"
+      ></div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ORGANIZA
+         =================================================== -->
+
+    <section
+      id="organiza"
+      class="section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="eyebrow">
+            ORGANIZA
+          </span>
+
+          <h2>
+            Tu espacio personal.
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+
+        <!-- NOTAS -->
+
+        <article class="feature-card">
+
+          <div class="feature-icon">
+            📝
+          </div>
+
+          <h3>
+            Notas rápidas
+          </h3>
+
+          <p>
+            Guarda ideas y apuntes
+            en este dispositivo.
+          </p>
+
+          <button
+            class="btn small primary"
+            data-open-tool="notes"
+          >
+            Abrir notas
+          </button>
+
+        </article>
+
+
+        <!-- TAREAS -->
+
+        <article class="feature-card">
+
+          <div class="feature-icon">
+            ☑
+          </div>
+
+          <h3>
+            Lista de tareas
+          </h3>
+
+          <p>
+            Organiza pendientes sin
+            depender de una cuenta.
+          </p>
+
+          <button
+            class="btn small primary"
+            data-open-tool="tasks"
+          >
+            Abrir tareas
+          </button>
+
+        </article>
+
+
+        <!-- COMPRAS -->
+
+        <article class="feature-card">
+
+          <div class="feature-icon">
+            🛒
+          </div>
+
+          <h3>
+            Compras
+          </h3>
+
+          <p>
+            Haz una lista y marca
+            lo que ya conseguiste.
+          </p>
+
+          <button
+            class="btn small primary"
+            data-open-tool="shopping"
+          >
+            Abrir compras
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EXPLORA
+         =================================================== -->
+
+    <section
+      id="explora"
+      class="section"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="eyebrow">
+            EXPLORA
+          </span>
+
+          <h2>
+            Busca fuera de ÚtilHub.
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="external-grid">
+
+
+        <a
+          class="external-card"
+          target="_blank"
+          rel="noopener"
+          href="https://www.google.com/search?q=recetas"
+        >
+
+          <span>
+            🍽️
+          </span>
+
+          <b>
+            Buscar recetas
+          </b>
+
+          <small>
+            Abre una búsqueda web
+          </small>
+
+        </a>
+
+
+        <a
+          class="external-card"
+          target="_blank"
+          rel="noopener"
+          href="https://www.google.com/search?tbm=shop&q=productos"
+        >
+
+          <span>
+            🛍️
+          </span>
+
+          <b>
+            Buscar productos
+          </b>
+
+          <small>
+            Compara opciones online
+          </small>
+
+        </a>
+
+
+        <a
+          class="external-card"
+          target="_blank"
+          rel="noopener"
+          href="https://www.google.com/maps"
+        >
+
+          <span>
+            📍
+          </span>
+
+          <b>
+            Buscar lugares
+          </b>
+
+          <small>
+            Abre Google Maps
+          </small>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         AJUSTES
+         =================================================== -->
+
+    <section
+      id="ajustes"
+      class="section settings"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <span class="eyebrow">
+            DATOS Y AJUSTES
+          </span>
+
+          <h2>
+            Tú tienes el control.
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="settings-grid">
+
+
+        <button
+          class="setting-card"
+          id="exportBtn"
+        >
+
+          <b>
+            ⬇ Exportar
+          </b>
+
+          <small>
+            Descarga tus datos en JSON.
+          </small>
+
+        </button>
+
+
+        <label class="setting-card">
+
+          <b>
+            ⬆ Importar
+          </b>
+
+          <small>
+            Restaura un archivo JSON.
+          </small>
+
+          <input
+            id="importFile"
+            type="file"
+            accept="application/json"
+            hidden
+          >
+
+        </label>
+
+
+        <button
+          class="setting-card danger"
+          id="resetBtn"
+        >
+
+          <b>
+            ↺ Restablecer
+          </b>
+
+          <small>
+            Borra los datos guardados
+            localmente.
+          </small>
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       PIE DE PÁGINA
+       ===================================================== -->
+
+  <footer>
+
+    <div>
+      <strong>
+        ÚtilHub V15
+      </strong>
+      · NOVA
+    </div>
+
+    <span>
+      Hecho para ser útil, rápido y sencillo.
+    </span>
+
+  </footer>
+
+
+  <!-- =====================================================
+       VENTANA MODAL
+       ===================================================== -->
+
+  <div
+    id="modal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-card">
+
+      <button
+        id="closeModal"
+        class="modal-close"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MENSAJES
+       ===================================================== -->
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
