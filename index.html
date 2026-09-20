@@ -2,13 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#050914">
-  <meta name="description" content="ÚtilHub V16 NOVA FLOW X: herramientas útiles para tu día a día.">
-  <title>ÚtilHub V16 — NOVA FLOW X</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ÍCONO 100% EN CÓDIGO: NO NECESITA NINGUNA IMAGEN -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.5' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="ÚtilHub V15 — NOVA FLOW. Herramientas útiles para tu día a día.">
+
+  <title>ÚtilHub V15 — NOVA FLOW</title>
+
+  <!-- ICONO INTEGRADO EN EL CÓDIGO -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.55' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E"
+  >
 
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./style.css">
@@ -16,225 +21,1240 @@
 
 <body>
 
-  <div id="nova-bg" aria-hidden="true">
-    <div class="nova-grid"></div>
-    <div class="nova-glow nova-glow-a"></div>
-    <div class="nova-glow nova-glow-b"></div>
-    <canvas id="nova-canvas"></canvas>
-    <div class="nova-vignette"></div>
-  </div>
+  <canvas id="novaCanvas"></canvas>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
   <header class="topbar">
 
-    <a class="brand" href="#inicio" aria-label="ÚtilHub inicio">
-
-      <span class="brand-mark">
-        <svg viewBox="0 0 80 80" aria-hidden="true">
+    <a href="#" class="brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
           <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#22d3ee"/>
-              <stop offset=".55" stop-color="#3b82f6"/>
-              <stop offset="1" stop-color="#7c3aed"/>
+            <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="55%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
             </linearGradient>
           </defs>
 
-          <rect x="3" y="3" width="74" height="74" rx="20"
-                fill="#07111f"
-                stroke="url(#logoGrad)"
-                stroke-width="3"/>
+          <rect
+            x="5"
+            y="5"
+            width="90"
+            height="90"
+            rx="22"
+            fill="#07111f"
+            stroke="url(#logoGradient)"
+            stroke-width="4"
+          />
 
-          <path d="M19 20v24c0 10 6 15 16 15s16-5 16-15V20M52 20v40m0-20h13M65 20v40"
-                fill="none"
-                stroke="url(#logoGrad)"
-                stroke-width="7"
-                stroke-linecap="round"/>
+          <path
+            d="M22 25v29c0 15 8 22 18 22s18-7 18-22V25"
+            fill="none"
+            stroke="url(#logoGradient)"
+            stroke-width="8"
+            stroke-linecap="round"
+          />
 
-          <path d="M12 49c17-11 35-14 56-7"
-                fill="none"
-                stroke="#22d3ee"
-                stroke-width="2.4"
-                stroke-linecap="round"/>
+          <path
+            d="M63 25v51M63 51h18M81 25v51"
+            fill="none"
+            stroke="url(#logoGradient)"
+            stroke-width="8"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M12 62c22-14 49-17 75-9"
+            fill="none"
+            stroke="#22d3ee"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
         </svg>
-      </span>
+      </div>
 
-      <span>
-        <b>ÚtilHub</b>
-        <small>V16 · NOVA FLOW X</small>
-      </span>
-
+      <div>
+        <strong>ÚtilHub</strong>
+        <span>NOVA FLOW</span>
+      </div>
     </a>
 
-    <nav class="nav">
-      <a href="#herramientas">Herramientas</a>
-      <a href="#organiza">Organiza</a>
-      <a href="#explora">Explora</a>
-      <a href="#ajustes">Ajustes</a>
+    <nav class="top-actions">
+      <button id="themeBtn" class="icon-btn" title="Cambiar tema">☀️</button>
+      <button id="motionBtn" class="icon-btn" title="Animaciones">✨</button>
+      <button id="menuBtn" class="icon-btn mobile-menu">☰</button>
     </nav>
-
-    <div class="top-actions">
-      <button id="themeBtn" class="icon-btn" title="Cambiar tema">☾</button>
-      <button id="motionBtn" class="icon-btn" title="Animaciones">✦</button>
-    </div>
 
   </header>
 
+  <main>
 
-  <main id="inicio">
-
-    <section class="hero section">
+    <!-- HERO -->
+    <section class="hero">
 
       <div class="hero-copy">
 
-        <span class="eyebrow">
-          <i></i>
-          NOVA FLOW GENERATION 16 · X
-        </span>
+        <div class="badge">
+          <span class="status-dot"></span>
+          NOVA FLOW 5.0
+        </div>
 
         <h1>
-          Todo lo útil.
-          <br>
-          <span>En un solo lugar.</span>
+          Todo lo útil,
+          <span>en un solo lugar.</span>
         </h1>
 
         <p>
-          Calcula, convierte, organiza, busca y guarda tus herramientas
-          favoritas sin depender de una cuenta.
+          Calcula, convierte, organiza, busca, crea y guarda tus herramientas
+          favoritas desde una sola plataforma.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="#herramientas">
+        <div class="hero-buttons">
+          <button class="primary-btn" data-scroll="#tools">
             Explorar herramientas
-          </a>
-
-          <button class="btn ghost" id="randomToolBtn">
-            Sorpréndeme
           </button>
-        </div>
 
-        <div class="hero-mini">
-          <span>⚡ Rápido</span>
-          <span>🔒 Datos locales</span>
-          <span>📱 Adaptado a móvil</span>
+          <button class="secondary-btn" id="commandBtn">
+            ⚡ Acciones rápidas
+          </button>
         </div>
 
       </div>
 
+      <div class="nova-stage">
 
-      <div class="nova-core" id="novaCore" aria-label="NOVA FLOW">
+        <div class="nova-ring ring-one"></div>
+        <div class="nova-ring ring-two"></div>
+        <div class="nova-ring ring-three"></div>
 
-        <div class="orbit orbit-1">
-          <span></span>
+        <div class="nova-core">
+          <div class="core-symbol">N</div>
+          <span>NOVA</span>
         </div>
 
-        <div class="orbit orbit-2">
-          <span></span>
+        <div class="orbit orbit-one">
+          <span>+</span>
         </div>
 
-        <div class="orbit orbit-3">
-          <span></span>
+        <div class="orbit orbit-two">
+          <span>×</span>
         </div>
 
-        <div class="core-ring"></div>
-
-        <div class="core-center">
-          <b>NOVA</b>
-          <small>FLOW X</small>
+        <div class="orbit orbit-three">
+          <span>◈</span>
         </div>
 
       </div>
 
     </section>
 
-
-    <section class="section search-section">
-
-      <div class="section-head">
-
-        <div>
-          <span class="eyebrow">CENTRO DE CONTROL</span>
-          <h2>¿Qué necesitas?</h2>
-        </div>
-
-        <span id="resultCount" class="muted">
-          0 herramientas
-        </span>
-
-      </div>
-
+    <!-- SEARCH -->
+    <section class="search-section">
 
       <div class="search-box">
 
-        <span>⌕</span>
+        <span class="search-icon">⌕</span>
 
         <input
           id="globalSearch"
           type="search"
-          placeholder="Buscar calculadora, conversor, notas..."
+          placeholder="Busca una herramienta..."
           autocomplete="off"
         >
 
-        <button id="clearSearch" title="Limpiar">
-          ×
+        <kbd>CTRL</kbd>
+        <kbd>K</kbd>
+
+      </div>
+
+      <div class="category-bar">
+
+        <button class="category active" data-category="all">
+          Todo
+        </button>
+
+        <button class="category" data-category="calculate">
+          🧮 Cálculo
+        </button>
+
+        <button class="category" data-category="convert">
+          🔄 Conversores
+        </button>
+
+        <button class="category" data-category="time">
+          ⏱️ Tiempo
+        </button>
+
+        <button class="category" data-category="organize">
+          📝 Organización
+        </button>
+
+        <button class="category" data-category="create">
+          🛠️ Crear
+        </button>
+
+        <button class="category" data-category="search">
+          🔎 Buscar
         </button>
 
       </div>
 
-      <div id="categoryBar" class="category-bar"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <strong id="toolCount">0</strong>
+        <span>Herramientas</span>
+      </div>
+
+      <div class="stat-card">
+        <strong id="savedCount">0</strong>
+        <span>Elementos guardados</span>
+      </div>
+
+      <div class="stat-card">
+        <strong id="favoriteCount">0</strong>
+        <span>Favoritos</span>
+      </div>
+
+      <div class="stat-card">
+        <strong id="novaStatus">ONLINE</strong>
+        <span>Estado NOVA</span>
+      </div>
 
     </section>
 
+    <!-- TOOLS -->
+    <section id="tools" class="content-section">
 
-    <section class="section stats">
-
-      <div>
-        <b id="statTools">0</b>
-        <span>herramientas</span>
-      </div>
-
-      <div>
-        <b id="statFavs">0</b>
-        <span>favoritas</span>
-      </div>
-
-      <div>
-        <b id="statNotes">0</b>
-        <span>notas</span>
-      </div>
-
-      <div>
-        <b id="statTasks">0</b>
-        <span>tareas</span>
-      </div>
-
-    </section>
-
-
-    <section class="section nova-dashboard">
-
-      <div class="nova-dashboard-card">
-
+      <div class="section-heading">
         <div>
-          <span class="eyebrow">NOVA COMMAND</span>
+          <span class="eyebrow">CENTRO DE HERRAMIENTAS</span>
+          <h2>Herramientas útiles</h2>
+        </div>
 
-          <h2>Acciones rápidas</h2>
+        <button class="small-btn" id="showAllBtn">
+          Mostrar todas
+        </button>
+      </div>
 
-          <p class="muted">
-            Usa el teclado o toca una acción para entrar directamente.
+      <div id="toolsGrid" class="tools-grid">
+
+        <!-- CALCULADORA -->
+        <article
+          class="tool-card"
+          data-category="calculate"
+          data-search="calculadora operaciones matematicas calcular"
+          data-tool="calculator"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🧮</div>
+            <button class="favorite" data-favorite="calculator">☆</button>
+          </div>
+
+          <h3>Calculadora</h3>
+          <p>Realiza operaciones matemáticas rápidamente.</p>
+
+          <div class="tool-body">
+            <input id="calcInput" class="tool-input" placeholder="Ej: 25*4+10">
+            <button id="calcBtn" class="tool-btn">Calcular</button>
+            <div id="calcResult" class="result-box">Resultado: —</div>
+          </div>
+
+        </article>
+
+        <!-- PORCENTAJES -->
+        <article
+          class="tool-card"
+          data-category="calculate"
+          data-search="porcentaje porcentaje calcular"
+          data-tool="percentage"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">%</div>
+            <button class="favorite" data-favorite="percentage">☆</button>
+          </div>
+
+          <h3>Porcentajes</h3>
+          <p>Calcula porcentajes de forma sencilla.</p>
+
+          <div class="tool-body">
+            <input id="percentNumber" class="tool-input" type="number" placeholder="Número">
+            <input id="percentValue" class="tool-input" type="number" placeholder="Porcentaje">
+            <button id="percentBtn" class="tool-btn">Calcular</button>
+            <div id="percentResult" class="result-box">Resultado: —</div>
+          </div>
+
+        </article>
+
+        <!-- DESCUENTO -->
+        <article
+          class="tool-card"
+          data-category="calculate"
+          data-search="descuento precio oferta"
+          data-tool="discount"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🏷️</div>
+            <button class="favorite" data-favorite="discount">☆</button>
+          </div>
+
+          <h3>Descuento</h3>
+          <p>Calcula precio final después de un descuento.</p>
+
+          <div class="tool-body">
+            <input id="discountPrice" class="tool-input" type="number" placeholder="Precio">
+            <input id="discountPercent" class="tool-input" type="number" placeholder="Descuento %">
+            <button id="discountBtn" class="tool-btn">Calcular</button>
+            <div id="discountResult" class="result-box">Resultado: —</div>
+          </div>
+
+        </article>
+
+        <!-- REGLA DE 3 -->
+        <article
+          class="tool-card"
+          data-category="calculate"
+          data-search="regla de tres proporcionalidad"
+          data-tool="rule3"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">📐</div>
+            <button class="favorite" data-favorite="rule3">☆</button>
+          </div>
+
+          <h3>Regla de 3</h3>
+          <p>Resuelve proporciones directamente.</p>
+
+          <div class="tool-body rule-grid">
+            <input id="ruleA" class="tool-input" type="number" placeholder="A">
+            <input id="ruleB" class="tool-input" type="number" placeholder="B">
+            <input id="ruleC" class="tool-input" type="number" placeholder="C">
+            <button id="ruleBtn" class="tool-btn">Resolver</button>
+            <div id="ruleResult" class="result-box">X = —</div>
+          </div>
+
+        </article>
+
+        <!-- LONGITUD -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="convertidor longitud metros kilometros centimetros"
+          data-tool="length"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">📏</div>
+            <button class="favorite" data-favorite="length">☆</button>
+          </div>
+
+          <h3>Longitud</h3>
+          <p>Convierte medidas de distancia.</p>
+
+          <div class="tool-body">
+
+            <input id="lengthValue" class="tool-input" type="number" placeholder="Valor">
+
+            <div class="two-cols">
+              <select id="lengthFrom" class="tool-input">
+                <option value="m">Metros</option>
+                <option value="km">Kilómetros</option>
+                <option value="cm">Centímetros</option>
+                <option value="mm">Milímetros</option>
+                <option value="mi">Millas</option>
+                <option value="ft">Pies</option>
+              </select>
+
+              <select id="lengthTo" class="tool-input">
+                <option value="m">Metros</option>
+                <option value="km">Kilómetros</option>
+                <option value="cm">Centímetros</option>
+                <option value="mm">Milímetros</option>
+                <option value="mi">Millas</option>
+                <option value="ft">Pies</option>
+              </select>
+            </div>
+
+            <button id="lengthBtn" class="tool-btn">Convertir</button>
+
+            <div id="lengthResult" class="result-box">Resultado: —</div>
+
+          </div>
+
+        </article>
+
+        <!-- PESO -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="peso masa gramos kilogramos libras"
+          data-tool="weight"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">⚖️</div>
+            <button class="favorite" data-favorite="weight">☆</button>
+          </div>
+
+          <h3>Masa</h3>
+          <p>Convierte gramos, kilogramos y libras.</p>
+
+          <div class="tool-body">
+
+            <input id="weightValue" class="tool-input" type="number" placeholder="Valor">
+
+            <div class="two-cols">
+              <select id="weightFrom" class="tool-input">
+                <option value="kg">Kilogramos</option>
+                <option value="g">Gramos</option>
+                <option value="mg">Miligramos</option>
+                <option value="lb">Libras</option>
+              </select>
+
+              <select id="weightTo" class="tool-input">
+                <option value="kg">Kilogramos</option>
+                <option value="g">Gramos</option>
+                <option value="mg">Miligramos</option>
+                <option value="lb">Libras</option>
+              </select>
+            </div>
+
+            <button id="weightBtn" class="tool-btn">Convertir</button>
+
+            <div id="weightResult" class="result-box">Resultado: —</div>
+
+          </div>
+
+        </article>
+
+        <!-- VOLUMEN -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="volumen litros mililitros metros cubicos"
+          data-tool="volume"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🧪</div>
+            <button class="favorite" data-favorite="volume">☆</button>
+          </div>
+
+          <h3>Volumen</h3>
+          <p>Convierte unidades de volumen.</p>
+
+          <div class="tool-body">
+
+            <input id="volumeValue" class="tool-input" type="number" placeholder="Valor">
+
+            <div class="two-cols">
+              <select id="volumeFrom" class="tool-input">
+                <option value="l">Litros</option>
+                <option value="ml">Mililitros</option>
+                <option value="m3">Metros cúbicos</option>
+              </select>
+
+              <select id="volumeTo" class="tool-input">
+                <option value="l">Litros</option>
+                <option value="ml">Mililitros</option>
+                <option value="m3">Metros cúbicos</option>
+              </select>
+            </div>
+
+            <button id="volumeBtn" class="tool-btn">Convertir</button>
+
+            <div id="volumeResult" class="result-box">Resultado: —</div>
+
+          </div>
+
+        </article>
+
+        <!-- TEMPERATURA -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="temperatura celsius fahrenheit kelvin"
+          data-tool="temperature"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🌡️</div>
+            <button class="favorite" data-favorite="temperature">☆</button>
+          </div>
+
+          <h3>Temperatura</h3>
+          <p>Convierte Celsius, Fahrenheit y Kelvin.</p>
+
+          <div class="tool-body">
+
+            <input id="tempValue" class="tool-input" type="number" placeholder="Valor">
+
+            <div class="two-cols">
+              <select id="tempFrom" class="tool-input">
+                <option value="c">°C</option>
+                <option value="f">°F</option>
+                <option value="k">K</option>
+              </select>
+
+              <select id="tempTo" class="tool-input">
+                <option value="f">°F</option>
+                <option value="c">°C</option>
+                <option value="k">K</option>
+              </select>
+            </div>
+
+            <button id="tempBtn" class="tool-btn">Convertir</button>
+
+            <div id="tempResult" class="result-box">Resultado: —</div>
+
+          </div>
+
+        </article>
+
+        <!-- TIEMPO -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="tiempo segundos minutos horas dias"
+          data-tool="timeConvert"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">⌛</div>
+            <button class="favorite" data-favorite="timeConvert">☆</button>
+          </div>
+
+          <h3>Tiempo</h3>
+          <p>Convierte segundos, minutos, horas y días.</p>
+
+          <div class="tool-body">
+
+            <input id="timeValue" class="tool-input" type="number" placeholder="Valor">
+
+            <div class="two-cols">
+              <select id="timeFrom" class="tool-input">
+                <option value="s">Segundos</option>
+                <option value="min">Minutos</option>
+                <option value="h">Horas</option>
+                <option value="d">Días</option>
+              </select>
+
+              <select id="timeTo" class="tool-input">
+                <option value="min">Minutos</option>
+                <option value="s">Segundos</option>
+                <option value="h">Horas</option>
+                <option value="d">Días</option>
+              </select>
+            </div>
+
+            <button id="timeConvertBtn" class="tool-btn">Convertir</button>
+
+            <div id="timeConvertResult" class="result-box">Resultado: —</div>
+
+          </div>
+
+        </article>
+
+        <!-- MONEDA -->
+        <article
+          class="tool-card"
+          data-category="convert"
+          data-search="moneda divisa dolar euro sol peru"
+          data-tool="currency"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">💱</div>
+            <button class="favorite" data-favorite="currency">☆</button>
+          </div>
+
+          <h3>Monedas</h3>
+          <p>Consulta conversiones de moneda.</p>
+
+          <div class="tool-body">
+
+            <input id="currencyValue" class="tool-input" type="number" placeholder="Cantidad">
+
+            <div class="two-cols">
+
+              <select id="currencyFrom" class="tool-input">
+                <option value="PEN">PEN</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+              </select>
+
+              <select id="currencyTo" class="tool-input">
+                <option value="USD">USD</option>
+                <option value="PEN">PEN</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+              </select>
+
+            </div>
+
+            <button id="currencyBtn" class="tool-btn">Consultar</button>
+
+            <div id="currencyResult" class="result-box">
+              Resultado: —
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- DIFERENCIA FECHAS -->
+        <article
+          class="tool-card"
+          data-category="time"
+          data-search="fechas diferencia dias calendario"
+          data-tool="dateDifference"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">📅</div>
+            <button class="favorite" data-favorite="dateDifference">☆</button>
+          </div>
+
+          <h3>Diferencia de fechas</h3>
+          <p>Calcula cuántos días hay entre dos fechas.</p>
+
+          <div class="tool-body">
+
+            <input id="dateOne" class="tool-input" type="date">
+            <input id="dateTwo" class="tool-input" type="date">
+
+            <button id="dateDifferenceBtn" class="tool-btn">
+              Calcular
+            </button>
+
+            <div id="dateDifferenceResult" class="result-box">
+              Resultado: —
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- EDAD -->
+        <article
+          class="tool-card"
+          data-category="time"
+          data-search="edad nacimiento años"
+          data-tool="age"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🎂</div>
+            <button class="favorite" data-favorite="age">☆</button>
+          </div>
+
+          <h3>Calculadora de edad</h3>
+          <p>Calcula tu edad a partir de tu fecha de nacimiento.</p>
+
+          <div class="tool-body">
+
+            <input id="birthDate" class="tool-input" type="date">
+
+            <button id="ageBtn" class="tool-btn">
+              Calcular edad
+            </button>
+
+            <div id="ageResult" class="result-box">
+              Edad: —
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- TEMPORIZADOR -->
+        <article
+          class="tool-card"
+          data-category="time"
+          data-search="temporizador timer cuenta regresiva"
+          data-tool="timer"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">⏱️</div>
+            <button class="favorite" data-favorite="timer">☆</button>
+          </div>
+
+          <h3>Temporizador</h3>
+          <p>Cuenta regresiva para tus actividades.</p>
+
+          <div class="tool-body">
+
+            <div class="two-cols">
+
+              <input
+                id="timerMinutes"
+                class="tool-input"
+                type="number"
+                min="0"
+                placeholder="Min"
+              >
+
+              <input
+                id="timerSeconds"
+                class="tool-input"
+                type="number"
+                min="0"
+                placeholder="Seg"
+              >
+
+            </div>
+
+            <div id="timerDisplay" class="big-display">
+              00:00
+            </div>
+
+            <div class="button-row">
+
+              <button id="timerStart" class="tool-btn">
+                Iniciar
+              </button>
+
+              <button id="timerPause" class="secondary-tool-btn">
+                Pausar
+              </button>
+
+              <button id="timerReset" class="secondary-tool-btn">
+                Reiniciar
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- CRONÓMETRO -->
+        <article
+          class="tool-card"
+          data-category="time"
+          data-search="cronometro stopwatch tiempo"
+          data-tool="stopwatch"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🏁</div>
+            <button class="favorite" data-favorite="stopwatch">☆</button>
+          </div>
+
+          <h3>Cronómetro</h3>
+          <p>Mide el tiempo de una actividad.</p>
+
+          <div class="tool-body">
+
+            <div id="stopwatchDisplay" class="big-display">
+              00:00.00
+            </div>
+
+            <div class="button-row">
+
+              <button id="stopwatchStart" class="tool-btn">
+                Iniciar
+              </button>
+
+              <button id="stopwatchPause" class="secondary-tool-btn">
+                Pausar
+              </button>
+
+              <button id="stopwatchReset" class="secondary-tool-btn">
+                Reiniciar
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- CONTRASEÑA -->
+        <article
+          class="tool-card"
+          data-category="create"
+          data-search="contraseña password generador seguridad"
+          data-tool="password"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🔐</div>
+            <button class="favorite" data-favorite="password">☆</button>
+          </div>
+
+          <h3>Generador de contraseñas</h3>
+          <p>Genera una contraseña aleatoria.</p>
+
+          <div class="tool-body">
+
+            <input
+              id="passwordOutput"
+              class="tool-input"
+              readonly
+              placeholder="Genera una contraseña"
+            >
+
+            <input
+              id="passwordLength"
+              class="tool-input"
+              type="number"
+              min="6"
+              max="64"
+              value="16"
+              placeholder="Longitud"
+            >
+
+            <button id="passwordBtn" class="tool-btn">
+              Generar
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- ALEATORIO -->
+        <article
+          class="tool-card"
+          data-category="create"
+          data-search="numero aleatorio azar random"
+          data-tool="random"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🎲</div>
+            <button class="favorite" data-favorite="random">☆</button>
+          </div>
+
+          <h3>Número aleatorio</h3>
+          <p>Obtén un número aleatorio dentro de un rango.</p>
+
+          <div class="tool-body">
+
+            <div class="two-cols">
+
+              <input
+                id="randomMin"
+                class="tool-input"
+                type="number"
+                placeholder="Mínimo"
+              >
+
+              <input
+                id="randomMax"
+                class="tool-input"
+                type="number"
+                placeholder="Máximo"
+              >
+
+            </div>
+
+            <button id="randomBtn" class="tool-btn">
+              Generar
+            </button>
+
+            <div id="randomResult" class="result-box">
+              Resultado: —
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- DADO -->
+        <article
+          class="tool-card"
+          data-category="create"
+          data-search="dado lanzar dado"
+          data-tool="dice"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🎲</div>
+            <button class="favorite" data-favorite="dice">☆</button>
+          </div>
+
+          <h3>Dado virtual</h3>
+          <p>Lanza un dado de seis caras.</p>
+
+          <div class="tool-body dice-body">
+
+            <div id="diceResult" class="dice-result">
+              ?
+            </div>
+
+            <button id="diceBtn" class="tool-btn">
+              Lanzar dado
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- QR -->
+        <article
+          class="tool-card"
+          data-category="create"
+          data-search="qr codigo qr enlace texto"
+          data-tool="qr"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">▦</div>
+            <button class="favorite" data-favorite="qr">☆</button>
+          </div>
+
+          <h3>Código QR</h3>
+          <p>Genera un código QR desde un texto o enlace.</p>
+
+          <div class="tool-body">
+
+            <input
+              id="qrText"
+              class="tool-input"
+              placeholder="Texto o enlace"
+            >
+
+            <button id="qrBtn" class="tool-btn">
+              Generar QR
+            </button>
+
+            <div id="qrContainer" class="qr-container"></div>
+
+          </div>
+
+        </article>
+
+        <!-- TEXTO -->
+        <article
+          class="tool-card wide-card"
+          data-category="create"
+          data-search="texto contador palabras letras mayusculas minusculas"
+          data-tool="text"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🔤</div>
+            <button class="favorite" data-favorite="text">☆</button>
+          </div>
+
+          <h3>Herramientas de texto</h3>
+          <p>Cuenta palabras y transforma textos rápidamente.</p>
+
+          <div class="tool-body">
+
+            <textarea
+              id="textInput"
+              class="tool-textarea"
+              placeholder="Escribe o pega tu texto..."
+            ></textarea>
+
+            <div class="text-stats">
+
+              <span>
+                Palabras:
+                <strong id="wordCount">0</strong>
+              </span>
+
+              <span>
+                Caracteres:
+                <strong id="charCount">0</strong>
+              </span>
+
+              <span>
+                Líneas:
+                <strong id="lineCount">0</strong>
+              </span>
+
+            </div>
+
+            <div class="button-row">
+
+              <button id="upperBtn" class="tool-btn">
+                MAYÚSCULAS
+              </button>
+
+              <button id="lowerBtn" class="secondary-tool-btn">
+                minúsculas
+              </button>
+
+              <button id="clearTextBtn" class="secondary-tool-btn">
+                Limpiar
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- DICCIONARIO -->
+        <article
+          class="tool-card"
+          data-category="search"
+          data-search="diccionario palabras significado definicion español"
+          data-tool="dictionary"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">📖</div>
+            <button class="favorite" data-favorite="dictionary">☆</button>
+          </div>
+
+          <h3>Diccionario</h3>
+          <p>Busca definiciones en español.</p>
+
+          <div class="tool-body">
+
+            <input
+              id="dictionaryWord"
+              class="tool-input"
+              placeholder="Ej: libertad"
+            >
+
+            <button id="dictionaryBtn" class="tool-btn">
+              Buscar
+            </button>
+
+            <div id="dictionaryResult" class="result-box">
+              Resultado: —
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- NOTAS -->
+        <article
+          class="tool-card wide-card"
+          data-category="organize"
+          data-search="notas guardar apuntes"
+          data-tool="notes"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">📝</div>
+            <button class="favorite" data-favorite="notes">☆</button>
+          </div>
+
+          <h3>Notas</h3>
+          <p>Guarda notas directamente en tu navegador.</p>
+
+          <div class="tool-body">
+
+            <textarea
+              id="notesInput"
+              class="tool-textarea"
+              placeholder="Escribe tus notas..."
+            ></textarea>
+
+            <div class="button-row">
+
+              <button id="saveNotesBtn" class="tool-btn">
+                Guardar
+              </button>
+
+              <button id="clearNotesBtn" class="secondary-tool-btn">
+                Borrar
+              </button>
+
+            </div>
+
+            <div id="notesSaved" class="result-box">
+              No hay cambios guardados.
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- TAREAS -->
+        <article
+          class="tool-card"
+          data-category="organize"
+          data-search="tareas lista pendientes to do"
+          data-tool="tasks"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">✅</div>
+            <button class="favorite" data-favorite="tasks">☆</button>
+          </div>
+
+          <h3>Lista de tareas</h3>
+          <p>Organiza tus actividades pendientes.</p>
+
+          <div class="tool-body">
+
+            <div class="input-row">
+
+              <input
+                id="taskInput"
+                class="tool-input"
+                placeholder="Nueva tarea"
+              >
+
+              <button id="addTaskBtn" class="tool-btn">
+                +
+              </button>
+
+            </div>
+
+            <div id="taskList" class="list-container"></div>
+
+          </div>
+
+        </article>
+
+        <!-- COMPRAS -->
+        <article
+          class="tool-card"
+          data-category="organize"
+          data-search="compras lista comprar supermercado"
+          data-tool="shopping"
+        >
+
+          <div class="tool-top">
+            <div class="tool-icon">🛒</div>
+            <button class="favorite" data-favorite="shopping">☆</button>
+          </div>
+
+          <h3>Lista de compras</h3>
+          <p>Organiza lo que necesitas comprar.</p>
+
+          <div class="tool-body">
+
+            <div class="input-row">
+
+              <input
+                id="shoppingInput"
+                class="tool-input"
+                placeholder="Producto"
+              >
+
+              <button id="addShoppingBtn" class="tool-btn">
+                +
+              </button>
+
+            </div>
+
+            <div id="shoppingList" class="list-container"></div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <div id="noResults" class="no-results hidden">
+        <div>🔎</div>
+        <h3>No encontramos esa herramienta</h3>
+        <p>Prueba con otra palabra.</p>
+      </div>
+
+    </section>
+
+    <!-- ORGANIZACIÓN -->
+    <section class="content-section utility-panels">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CENTRO PERSONAL</span>
+          <h2>Organiza ÚtilHub</h2>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+
+        <div class="info-panel">
+
+          <div class="panel-icon">⭐</div>
+
+          <h3>Favoritos</h3>
+
+          <p>
+            Marca las herramientas que utilizas con mayor frecuencia.
           </p>
+
+          <button id="favoritesBtn" class="secondary-btn">
+            Ver favoritos
+          </button>
+
         </div>
 
-        <div class="quick-actions">
+        <div class="info-panel">
 
-          <button class="btn primary" id="commandBtn">
-            ⌘ Comandos
+          <div class="panel-icon">🕘</div>
+
+          <h3>Recientes</h3>
+
+          <p>
+            Consulta las herramientas que has utilizado recientemente.
+          </p>
+
+          <button id="recentBtn" class="secondary-btn">
+            Ver recientes
           </button>
 
-          <button class="btn ghost" id="focusBtn">
-            ◉ Modo enfoque
-          </button>
+        </div>
 
-          <button class="btn ghost" id="pulseBtn">
-            ✦ Pulso NOVA
+        <div class="info-panel">
+
+          <div class="panel-icon">💾</div>
+
+          <h3>Datos</h3>
+
+          <p>
+            Exporta, importa o elimina tus datos locales.
+          </p>
+
+          <div class="button-row">
+
+            <button id="exportBtn" class="secondary-tool-btn">
+              Exportar
+            </button>
+
+            <button id="importBtn" class="secondary-tool-btn">
+              Importar
+            </button>
+
+            <input
+              id="importFile"
+              type="file"
+              accept=".json"
+              hidden
+            >
+
+          </div>
+
+        </div>
+
+        <div class="info-panel">
+
+          <div class="panel-icon">⚙️</div>
+
+          <h3>Configuración</h3>
+
+          <p>
+            Controla el aspecto y las animaciones de NOVA FLOW.
+          </p>
+
+          <button id="settingsBtn" class="secondary-btn">
+            Configuración
           </button>
 
         </div>
@@ -243,103 +1263,41 @@
 
     </section>
 
+    <!-- ENLACES -->
+    <section class="content-section">
 
-    <section id="herramientas" class="section">
-
-      <div class="section-head">
+      <div class="section-heading">
 
         <div>
-          <span class="eyebrow">NÚCLEO ÚTIL</span>
-          <h2>Herramientas</h2>
+          <span class="eyebrow">ACCESOS EXTERNOS</span>
+          <h2>Buscar y descubrir</h2>
         </div>
 
       </div>
-
-      <div id="toolGrid" class="tool-grid"></div>
-
-    </section>
-
-
-    <section id="organiza" class="section">
-
-      <div class="section-head">
-
-        <div>
-          <span class="eyebrow">ORGANIZA</span>
-          <h2>Tu espacio personal</h2>
-        </div>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-        <button class="feature-card" data-open="notes">
-          <span>📝</span>
-          <b>Notas</b>
-          <small>
-            Guarda ideas y apuntes en este dispositivo.
-          </small>
-        </button>
-
-        <button class="feature-card" data-open="tasks">
-          <span>☑️</span>
-          <b>Tareas</b>
-          <small>
-            Controla pendientes y marca lo terminado.
-          </small>
-        </button>
-
-        <button class="feature-card" data-open="shopping">
-          <span>🛒</span>
-          <b>Compras</b>
-          <small>
-            Lista de productos para tus compras.
-          </small>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <section id="explora" class="section">
-
-      <div class="section-head">
-
-        <div>
-          <span class="eyebrow">EXPLORA</span>
-          <h2>Accesos útiles</h2>
-        </div>
-
-      </div>
-
 
       <div class="external-grid">
 
         <a
           class="external-card"
-          href="https://www.google.com/search?q=recetas"
+          href="https://www.google.com/search?q=comida"
           target="_blank"
           rel="noopener"
         >
-          <span>🍳</span>
-          <b>Recetas</b>
-          <small>Busca ideas para cocinar.</small>
+          🍔
+          <strong>Buscar comida</strong>
+          <span>Encuentra opciones en la web.</span>
         </a>
-
 
         <a
           class="external-card"
-          href="https://www.google.com/search?tbm=shop&q=productos"
+          href="https://www.google.com/search?q=tiendas+online"
           target="_blank"
           rel="noopener"
         >
-          <span>🛍️</span>
-          <b>Productos</b>
-          <small>Consulta opciones de compra.</small>
+          🛍️
+          <strong>Buscar compras</strong>
+          <span>Busca productos y tiendas.</span>
         </a>
-
 
         <a
           class="external-card"
@@ -347,62 +1305,21 @@
           target="_blank"
           rel="noopener"
         >
-          <span>📍</span>
-          <b>Mapa</b>
-          <small>Encuentra lugares y rutas.</small>
+          📍
+          <strong>Buscar lugares</strong>
+          <span>Abre mapas y encuentra lugares.</span>
         </a>
 
-      </div>
-
-    </section>
-
-
-    <section id="ajustes" class="section">
-
-      <div class="section-head">
-
-        <div>
-          <span class="eyebrow">AJUSTES</span>
-          <h2>Datos y experiencia</h2>
-        </div>
-
-      </div>
-
-
-      <div class="settings-grid">
-
-        <button class="setting-card" id="exportBtn">
-          ⬇️
-          <b>Exportar datos</b>
-          <small>
-            Descarga tus notas, tareas, compras y preferencias.
-          </small>
-        </button>
-
-
-        <label class="setting-card">
-          ⬆️
-          <b>Importar datos</b>
-          <small>
-            Restaura un archivo JSON exportado.
-          </small>
-
-          <input
-            id="importInput"
-            type="file"
-            accept="application/json"
-            hidden
-          >
-        </label>
-
-
-        <button class="setting-card danger" id="resetBtn">
-          ♻️
-          <b>Restablecer</b>
-          <small>
-            Borra los datos locales de ÚtilHub.
-          </small>
-        </button>
+        <a
+          class="external-card"
+          href="https://www.google.com/search?q=clima"
+          target="_blank"
+          rel="noopener"
+        >
+          ☁️
+          <strong>Buscar clima</strong>
+          <span>Consulta información meteorológica.</span>
+        </a>
 
       </div>
 
@@ -410,117 +1327,45 @@
 
   </main>
 
+  <footer class="footer">
 
-  <footer>
-    <b>ÚtilHub V16</b>
-    · NOVA FLOW GENERATION 16 · X
-    · Hecho para ser útil.
+    <div class="footer-brand">
+      <strong>ÚtilHub</strong>
+      <span>NOVA FLOW</span>
+    </div>
+
+    <p>
+      Herramientas útiles para tu día a día.
+    </p>
+
+    <span class="footer-version">
+      V15
+    </span>
+
   </footer>
 
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
 
-  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
 
-    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
 
-    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">
+        ×
+      </button>
 
-      <div class="modal-head">
-
-        <div>
-          <span id="modalTag" class="eyebrow"></span>
-          <h3 id="modalTitle"></h3>
-        </div>
-
-        <button class="close-btn" data-close-modal>
-          ×
-        </button>
-
-      </div>
-
-      <div id="modalBody"></div>
+      <div id="modalContent"></div>
 
     </div>
 
   </div>
 
-
-  <div id="toast" class="toast"></div>
-
-
-  <div id="commandPalette" class="command-palette" aria-hidden="true">
-
-    <div class="command-backdrop" data-close-command></div>
-
-    <div class="command-panel">
-
-      <div class="command-head">
-
-        <span>⌘</span>
-
-        <input
-          id="commandInput"
-          type="search"
-          placeholder="Escribe una herramienta..."
-          autocomplete="off"
-        >
-
-        <button data-close-command>
-          ×
-        </button>
-
-      </div>
-
-      <div id="commandList" class="command-list"></div>
-
-      <small class="muted">
-        Esc para cerrar · Ctrl/⌘ + K para abrir
-      </small>
-
-    </div>
-
+  <!-- TOAST -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Listo</span>
   </div>
-
-
-  <div id="focusOverlay" class="focus-overlay" aria-hidden="true">
-
-    <div class="focus-card">
-
-      <span class="eyebrow">NOVA FOCUS</span>
-
-      <h2>Modo enfoque</h2>
-
-      <p class="muted">
-        Reduce distracciones y trabaja con una cuenta regresiva.
-      </p>
-
-      <div id="focusClock">
-        25:00
-      </div>
-
-      <div class="focus-actions">
-
-        <button class="btn primary" id="focusStart">
-          Iniciar
-        </button>
-
-        <button class="btn ghost" id="focusPause">
-          Pausar
-        </button>
-
-        <button class="btn ghost" id="focusReset">
-          Reiniciar
-        </button>
-
-        <button class="btn ghost" id="focusClose">
-          Salir
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
 
   <script src="./script.js"></script>
 
