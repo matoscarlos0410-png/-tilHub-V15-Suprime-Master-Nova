@@ -2,208 +2,92 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#050914">
-  <meta name="description" content="ÚtilHub V15 — herramientas útiles para tu día a día">
+  <meta name="description" content="ÚtilHub V16 NOVA FLOW X: herramientas útiles para tu día a día.">
+  <title>ÚtilHub V16 — NOVA FLOW X</title>
 
-  <title>ÚtilHub V15 — NOVA</title>
+  <!-- ÍCONO 100% EN CÓDIGO: NO NECESITA NINGUNA IMAGEN -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.5' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E">
 
-  <!-- =====================================================
-       ICONO ÚTILHUB
-       100% CÓDIGO — NO NECESITA IMAGEN NI icon.svg
-       ===================================================== -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2322d3ee'/%3E%3Cstop offset='.55' stop-color='%233b82f6'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='30' fill='%23050914'/%3E%3Crect x='5' y='5' width='118' height='118' rx='27' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M27 31v38c0 18 10 27 25 27s25-9 25-27V31M82 31v65m0-33h25M107 31v65' fill='none' stroke='url(%23g)' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M16 78c27-20 61-25 96-14' fill='none' stroke='%2322d3ee' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='112' cy='65' r='4' fill='white'/%3E%3C/svg%3E"
-  >
-
-  <link rel="manifest" href="manifest.webmanifest">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <!-- =====================================================
-       FONDO NOVA
-       ===================================================== -->
-
-  <div class="nova-bg" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div id="nova-bg" aria-hidden="true">
+    <div class="nova-grid"></div>
+    <div class="nova-glow nova-glow-a"></div>
+    <div class="nova-glow nova-glow-b"></div>
+    <canvas id="nova-canvas"></canvas>
+    <div class="nova-vignette"></div>
   </div>
-
-
-  <!-- =====================================================
-       BARRA SUPERIOR
-       ===================================================== -->
 
   <header class="topbar">
 
     <a class="brand" href="#inicio" aria-label="ÚtilHub inicio">
 
-      <!-- LOGO UH EN CÓDIGO -->
       <span class="brand-mark">
-
-        <svg viewBox="0 0 64 64">
-
+        <svg viewBox="0 0 80 80" aria-hidden="true">
           <defs>
-
-            <linearGradient
-              id="brandGradient"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="1"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#22d3ee"
-              />
-
-              <stop
-                offset="55%"
-                stop-color="#3b82f6"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#7c3aed"
-              />
-
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#22d3ee"/>
+              <stop offset=".55" stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#7c3aed"/>
             </linearGradient>
-
           </defs>
 
-          <rect
-            x="3"
-            y="3"
-            width="58"
-            height="58"
-            rx="15"
-            fill="#07111f"
-            stroke="url(#brandGradient)"
-            stroke-width="2.5"
-          />
+          <rect x="3" y="3" width="74" height="74" rx="20"
+                fill="#07111f"
+                stroke="url(#logoGrad)"
+                stroke-width="3"/>
 
-          <!-- U -->
+          <path d="M19 20v24c0 10 6 15 16 15s16-5 16-15V20M52 20v40m0-20h13M65 20v40"
+                fill="none"
+                stroke="url(#logoGrad)"
+                stroke-width="7"
+                stroke-linecap="round"/>
 
-          <path
-            d="M14 17v17c0 9 5 14 12 14s12-5 12-14V17"
-            fill="none"
-            stroke="url(#brandGradient)"
-            stroke-width="5.5"
-            stroke-linecap="round"
-          />
-
-          <!-- H -->
-
-          <path
-            d="M41 17v30M41 32h11M52 17v30"
-            fill="none"
-            stroke="url(#brandGradient)"
-            stroke-width="5.5"
-            stroke-linecap="round"
-          />
-
-          <!-- NOVA -->
-
-          <path
-            d="M8 39c15-10 30-13 49-7"
-            fill="none"
-            stroke="#22d3ee"
-            stroke-width="1.8"
-            stroke-linecap="round"
-          />
-
+          <path d="M12 49c17-11 35-14 56-7"
+                fill="none"
+                stroke="#22d3ee"
+                stroke-width="2.4"
+                stroke-linecap="round"/>
         </svg>
-
       </span>
 
       <span>
-
-        <strong>ÚtilHub</strong>
-
-        <small>V15 · NOVA</small>
-
+        <b>ÚtilHub</b>
+        <small>V16 · NOVA FLOW X</small>
       </span>
 
     </a>
 
-
-    <!-- NAVEGACIÓN -->
-
-    <nav>
-
-      <a href="#herramientas">
-        Herramientas
-      </a>
-
-      <a href="#organiza">
-        Organiza
-      </a>
-
-      <a href="#explora">
-        Explora
-      </a>
-
-      <a href="#ajustes">
-        Ajustes
-      </a>
-
+    <nav class="nav">
+      <a href="#herramientas">Herramientas</a>
+      <a href="#organiza">Organiza</a>
+      <a href="#explora">Explora</a>
+      <a href="#ajustes">Ajustes</a>
     </nav>
 
-
-    <!-- CONTROLES -->
-
     <div class="top-actions">
-
-      <button
-        id="themeBtn"
-        class="icon-btn"
-        title="Cambiar tema"
-        aria-label="Cambiar tema"
-      >
-        ☾
-      </button>
-
-      <button
-        id="animBtn"
-        class="icon-btn"
-        title="Animaciones"
-        aria-label="Animaciones"
-      >
-        ✦
-      </button>
-
+      <button id="themeBtn" class="icon-btn" title="Cambiar tema">☾</button>
+      <button id="motionBtn" class="icon-btn" title="Animaciones">✦</button>
     </div>
 
   </header>
 
 
-  <!-- =====================================================
-       CONTENIDO PRINCIPAL
-       ===================================================== -->
-
   <main id="inicio">
 
-
-    <!-- ===================================================
-         HERO
-         =================================================== -->
-
-    <section class="hero">
+    <section class="hero section">
 
       <div class="hero-copy">
 
         <span class="eyebrow">
-          NOVA 5.0 · RÁPIDO · PRIVADO · ÚTIL
+          <i></i>
+          NOVA FLOW GENERATION 16 · X
         </span>
 
         <h1>
@@ -213,250 +97,176 @@
         </h1>
 
         <p>
-          Calcula, convierte, organiza, busca y guarda
-          herramientas que puedes usar directamente
-          desde tu navegador.
+          Calcula, convierte, organiza, busca y guarda tus herramientas
+          favoritas sin depender de una cuenta.
         </p>
 
-
         <div class="hero-actions">
-
-          <a
-            class="btn primary"
-            href="#herramientas"
-          >
+          <a class="btn primary" href="#herramientas">
             Explorar herramientas
           </a>
 
-          <button
-            class="btn ghost"
-            id="randomToolBtn"
-          >
+          <button class="btn ghost" id="randomToolBtn">
             Sorpréndeme
           </button>
-
         </div>
 
-
-        <div class="hero-pills">
-
-          <span>
-            ⚡ Sin cuenta
-          </span>
-
-          <span>
-            🔒 Datos locales
-          </span>
-
-          <span>
-            📱 Adaptado a móvil
-          </span>
-
+        <div class="hero-mini">
+          <span>⚡ Rápido</span>
+          <span>🔒 Datos locales</span>
+          <span>📱 Adaptado a móvil</span>
         </div>
 
       </div>
 
 
-      <!-- =================================================
-           NÚCLEO NOVA
-           ================================================= -->
+      <div class="nova-core" id="novaCore" aria-label="NOVA FLOW">
 
-      <div
-        class="nova-core"
-        aria-label="Núcleo NOVA"
-      >
-
-        <div class="orbit orbit-a"></div>
-
-        <div class="orbit orbit-b"></div>
-
-
-        <div class="core-logo">
-
-          <span>
-            UH
-          </span>
-
-          <small>
-            NOVA
-          </small>
-
+        <div class="orbit orbit-1">
+          <span></span>
         </div>
 
+        <div class="orbit orbit-2">
+          <span></span>
+        </div>
 
-        <i class="spark s1">
-          ✦
-        </i>
+        <div class="orbit orbit-3">
+          <span></span>
+        </div>
 
-        <i class="spark s2">
-          ✦
-        </i>
+        <div class="core-ring"></div>
 
-        <i class="spark s3">
-          ·
-        </i>
+        <div class="core-center">
+          <b>NOVA</b>
+          <small>FLOW X</small>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- ===================================================
-         BUSCADOR
-         =================================================== -->
-
-    <section class="search-zone">
-
-      <div class="search-box">
-
-        <span>
-          ⌕
-        </span>
-
-        <input
-          id="globalSearch"
-          autocomplete="off"
-          placeholder="Busca una herramienta..."
-        >
-
-        <kbd>
-          Ctrl K
-        </kbd>
-
-      </div>
-
-
-      <div
-        id="categoryBar"
-        class="categories"
-      ></div>
-
-    </section>
-
-
-    <!-- ===================================================
-         ESTADÍSTICAS
-         =================================================== -->
-
-    <section class="stats">
-
-      <div>
-
-        <strong id="toolCount">
-          0
-        </strong>
-
-        <span>
-          herramientas
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <strong id="favCount">
-          0
-        </strong>
-
-        <span>
-          favoritas
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <strong id="noteCount">
-          0
-        </strong>
-
-        <span>
-          notas
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <strong id="taskCount">
-          0
-        </strong>
-
-        <span>
-          tareas
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         HERRAMIENTAS
-         =================================================== -->
-
-    <section
-      id="herramientas"
-      class="section"
-    >
+    <section class="section search-section">
 
       <div class="section-head">
 
         <div>
-
-          <span class="eyebrow">
-            CENTRO DE HERRAMIENTAS
-          </span>
-
-          <h2>
-            Lo que necesitas, rápido.
-          </h2>
-
+          <span class="eyebrow">CENTRO DE CONTROL</span>
+          <h2>¿Qué necesitas?</h2>
         </div>
 
+        <span id="resultCount" class="muted">
+          0 herramientas
+        </span>
 
-        <button
-          class="text-btn"
-          id="showAllBtn"
+      </div>
+
+
+      <div class="search-box">
+
+        <span>⌕</span>
+
+        <input
+          id="globalSearch"
+          type="search"
+          placeholder="Buscar calculadora, conversor, notas..."
+          autocomplete="off"
         >
-          Ver todas
+
+        <button id="clearSearch" title="Limpiar">
+          ×
         </button>
 
       </div>
 
-
-      <div
-        id="toolGrid"
-        class="tool-grid"
-      ></div>
+      <div id="categoryBar" class="category-bar"></div>
 
     </section>
 
 
-    <!-- ===================================================
-         ORGANIZA
-         =================================================== -->
+    <section class="section stats">
 
-    <section
-      id="organiza"
-      class="section"
-    >
+      <div>
+        <b id="statTools">0</b>
+        <span>herramientas</span>
+      </div>
+
+      <div>
+        <b id="statFavs">0</b>
+        <span>favoritas</span>
+      </div>
+
+      <div>
+        <b id="statNotes">0</b>
+        <span>notas</span>
+      </div>
+
+      <div>
+        <b id="statTasks">0</b>
+        <span>tareas</span>
+      </div>
+
+    </section>
+
+
+    <section class="section nova-dashboard">
+
+      <div class="nova-dashboard-card">
+
+        <div>
+          <span class="eyebrow">NOVA COMMAND</span>
+
+          <h2>Acciones rápidas</h2>
+
+          <p class="muted">
+            Usa el teclado o toca una acción para entrar directamente.
+          </p>
+        </div>
+
+        <div class="quick-actions">
+
+          <button class="btn primary" id="commandBtn">
+            ⌘ Comandos
+          </button>
+
+          <button class="btn ghost" id="focusBtn">
+            ◉ Modo enfoque
+          </button>
+
+          <button class="btn ghost" id="pulseBtn">
+            ✦ Pulso NOVA
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section id="herramientas" class="section">
 
       <div class="section-head">
 
         <div>
+          <span class="eyebrow">NÚCLEO ÚTIL</span>
+          <h2>Herramientas</h2>
+        </div>
 
-          <span class="eyebrow">
-            ORGANIZA
-          </span>
+      </div>
 
-          <h2>
-            Tu espacio personal.
-          </h2>
+      <div id="toolGrid" class="tool-grid"></div>
 
+    </section>
+
+
+    <section id="organiza" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="eyebrow">ORGANIZA</span>
+          <h2>Tu espacio personal</h2>
         </div>
 
       </div>
@@ -464,113 +274,42 @@
 
       <div class="feature-grid">
 
+        <button class="feature-card" data-open="notes">
+          <span>📝</span>
+          <b>Notas</b>
+          <small>
+            Guarda ideas y apuntes en este dispositivo.
+          </small>
+        </button>
 
-        <!-- NOTAS -->
+        <button class="feature-card" data-open="tasks">
+          <span>☑️</span>
+          <b>Tareas</b>
+          <small>
+            Controla pendientes y marca lo terminado.
+          </small>
+        </button>
 
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            📝
-          </div>
-
-          <h3>
-            Notas rápidas
-          </h3>
-
-          <p>
-            Guarda ideas y apuntes
-            en este dispositivo.
-          </p>
-
-          <button
-            class="btn small primary"
-            data-open-tool="notes"
-          >
-            Abrir notas
-          </button>
-
-        </article>
-
-
-        <!-- TAREAS -->
-
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            ☑
-          </div>
-
-          <h3>
-            Lista de tareas
-          </h3>
-
-          <p>
-            Organiza pendientes sin
-            depender de una cuenta.
-          </p>
-
-          <button
-            class="btn small primary"
-            data-open-tool="tasks"
-          >
-            Abrir tareas
-          </button>
-
-        </article>
-
-
-        <!-- COMPRAS -->
-
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            🛒
-          </div>
-
-          <h3>
-            Compras
-          </h3>
-
-          <p>
-            Haz una lista y marca
-            lo que ya conseguiste.
-          </p>
-
-          <button
-            class="btn small primary"
-            data-open-tool="shopping"
-          >
-            Abrir compras
-          </button>
-
-        </article>
+        <button class="feature-card" data-open="shopping">
+          <span>🛒</span>
+          <b>Compras</b>
+          <small>
+            Lista de productos para tus compras.
+          </small>
+        </button>
 
       </div>
 
     </section>
 
 
-    <!-- ===================================================
-         EXPLORA
-         =================================================== -->
-
-    <section
-      id="explora"
-      class="section"
-    >
+    <section id="explora" class="section">
 
       <div class="section-head">
 
         <div>
-
-          <span class="eyebrow">
-            EXPLORA
-          </span>
-
-          <h2>
-            Busca fuera de ÚtilHub.
-          </h2>
-
+          <span class="eyebrow">EXPLORA</span>
+          <h2>Accesos útiles</h2>
         </div>
 
       </div>
@@ -578,70 +317,39 @@
 
       <div class="external-grid">
 
-
         <a
           class="external-card"
-          target="_blank"
-          rel="noopener"
           href="https://www.google.com/search?q=recetas"
+          target="_blank"
+          rel="noopener"
         >
-
-          <span>
-            🍽️
-          </span>
-
-          <b>
-            Buscar recetas
-          </b>
-
-          <small>
-            Abre una búsqueda web
-          </small>
-
+          <span>🍳</span>
+          <b>Recetas</b>
+          <small>Busca ideas para cocinar.</small>
         </a>
 
 
         <a
           class="external-card"
-          target="_blank"
-          rel="noopener"
           href="https://www.google.com/search?tbm=shop&q=productos"
+          target="_blank"
+          rel="noopener"
         >
-
-          <span>
-            🛍️
-          </span>
-
-          <b>
-            Buscar productos
-          </b>
-
-          <small>
-            Compara opciones online
-          </small>
-
+          <span>🛍️</span>
+          <b>Productos</b>
+          <small>Consulta opciones de compra.</small>
         </a>
 
 
         <a
           class="external-card"
+          href="https://www.google.com/maps"
           target="_blank"
           rel="noopener"
-          href="https://www.google.com/maps"
         >
-
-          <span>
-            📍
-          </span>
-
-          <b>
-            Buscar lugares
-          </b>
-
-          <small>
-            Abre Google Maps
-          </small>
-
+          <span>📍</span>
+          <b>Mapa</b>
+          <small>Encuentra lugares y rutas.</small>
         </a>
 
       </div>
@@ -649,27 +357,13 @@
     </section>
 
 
-    <!-- ===================================================
-         AJUSTES
-         =================================================== -->
-
-    <section
-      id="ajustes"
-      class="section settings"
-    >
+    <section id="ajustes" class="section">
 
       <div class="section-head">
 
         <div>
-
-          <span class="eyebrow">
-            DATOS Y AJUSTES
-          </span>
-
-          <h2>
-            Tú tienes el control.
-          </h2>
-
+          <span class="eyebrow">AJUSTES</span>
+          <h2>Datos y experiencia</h2>
         </div>
 
       </div>
@@ -677,57 +371,37 @@
 
       <div class="settings-grid">
 
-
-        <button
-          class="setting-card"
-          id="exportBtn"
-        >
-
-          <b>
-            ⬇ Exportar
-          </b>
-
+        <button class="setting-card" id="exportBtn">
+          ⬇️
+          <b>Exportar datos</b>
           <small>
-            Descarga tus datos en JSON.
+            Descarga tus notas, tareas, compras y preferencias.
           </small>
-
         </button>
 
 
         <label class="setting-card">
-
-          <b>
-            ⬆ Importar
-          </b>
-
+          ⬆️
+          <b>Importar datos</b>
           <small>
-            Restaura un archivo JSON.
+            Restaura un archivo JSON exportado.
           </small>
 
           <input
-            id="importFile"
+            id="importInput"
             type="file"
             accept="application/json"
             hidden
           >
-
         </label>
 
 
-        <button
-          class="setting-card danger"
-          id="resetBtn"
-        >
-
-          <b>
-            ↺ Restablecer
-          </b>
-
+        <button class="setting-card danger" id="resetBtn">
+          ♻️
+          <b>Restablecer</b>
           <small>
-            Borra los datos guardados
-            localmente.
+            Borra los datos locales de ÚtilHub.
           </small>
-
         </button>
 
       </div>
@@ -737,68 +411,118 @@
   </main>
 
 
-  <!-- =====================================================
-       PIE DE PÁGINA
-       ===================================================== -->
-
   <footer>
-
-    <div>
-      <strong>
-        ÚtilHub V15
-      </strong>
-      · NOVA
-    </div>
-
-    <span>
-      Hecho para ser útil, rápido y sencillo.
-    </span>
-
+    <b>ÚtilHub V16</b>
+    · NOVA FLOW GENERATION 16 · X
+    · Hecho para ser útil.
   </footer>
 
 
-  <!-- =====================================================
-       VENTANA MODAL
-       ===================================================== -->
+  <div id="modal" class="modal" aria-hidden="true">
 
-  <div
-    id="modal"
-    class="modal"
-    aria-hidden="true"
-  >
+    <div class="modal-backdrop" data-close-modal></div>
 
-    <div class="modal-card">
+    <div class="modal-panel" role="dialog" aria-modal="true">
 
-      <button
-        id="closeModal"
-        class="modal-close"
-        aria-label="Cerrar"
-      >
-        ×
-      </button>
+      <div class="modal-head">
 
-      <div id="modalContent"></div>
+        <div>
+          <span id="modalTag" class="eyebrow"></span>
+          <h3 id="modalTitle"></h3>
+        </div>
+
+        <button class="close-btn" data-close-modal>
+          ×
+        </button>
+
+      </div>
+
+      <div id="modalBody"></div>
 
     </div>
 
   </div>
 
 
-  <!-- =====================================================
-       MENSAJES
-       ===================================================== -->
-
-  <div
-    id="toast"
-    class="toast"
-  ></div>
+  <div id="toast" class="toast"></div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+  <div id="commandPalette" class="command-palette" aria-hidden="true">
 
-  <script src="script.js"></script>
+    <div class="command-backdrop" data-close-command></div>
+
+    <div class="command-panel">
+
+      <div class="command-head">
+
+        <span>⌘</span>
+
+        <input
+          id="commandInput"
+          type="search"
+          placeholder="Escribe una herramienta..."
+          autocomplete="off"
+        >
+
+        <button data-close-command>
+          ×
+        </button>
+
+      </div>
+
+      <div id="commandList" class="command-list"></div>
+
+      <small class="muted">
+        Esc para cerrar · Ctrl/⌘ + K para abrir
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div id="focusOverlay" class="focus-overlay" aria-hidden="true">
+
+    <div class="focus-card">
+
+      <span class="eyebrow">NOVA FOCUS</span>
+
+      <h2>Modo enfoque</h2>
+
+      <p class="muted">
+        Reduce distracciones y trabaja con una cuenta regresiva.
+      </p>
+
+      <div id="focusClock">
+        25:00
+      </div>
+
+      <div class="focus-actions">
+
+        <button class="btn primary" id="focusStart">
+          Iniciar
+        </button>
+
+        <button class="btn ghost" id="focusPause">
+          Pausar
+        </button>
+
+        <button class="btn ghost" id="focusReset">
+          Reiniciar
+        </button>
+
+        <button class="btn ghost" id="focusClose">
+          Salir
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="./script.js"></script>
 
 </body>
 </html>
