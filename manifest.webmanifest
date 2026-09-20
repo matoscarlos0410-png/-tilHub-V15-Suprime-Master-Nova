@@ -1,0 +1,12 @@
+{
+  "name": "ÚtilHub V15 — NOVA FLOW",
+  "short_name": "ÚtilHub",
+  "description": "Herramientas útiles para tu día a día.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050914",
+  "theme_color": "#07111f",
+  "lang": "es"
+}
